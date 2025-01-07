@@ -2,7 +2,7 @@ import requests
 
 # Base URL and headers
 base_url = "https://api.metisai.ir/api/v1/chat"
-api_key = "tpsg-5Po3cTvYANmWDdTxWNi9x6bAkd3BT6z"
+api_key = "YOUR_API_KEY"
 headers = {
     "Authorization": f"Bearer {api_key}",
     "Content-Type": "application/json"
@@ -76,7 +76,7 @@ def delete_chat_session(session_id):
 
 # Main section to test all functions
 if __name__ == "__main__":
-    bot_id = "2b723918-5fd1-4b4b-acb9-895a1f80fb73"
+    bot_id = "BOT_ID"
     user_id = {"name":"Metis", "id":"metis_ai"}
     session_id = None
 
