@@ -37,20 +37,6 @@ def send_message(session_id, content, message_type="USER"):
     response = requests.post(url, headers=headers, json=data)
     return response.json()
 
-# Function to send a message in a chat session with streaming response
-def send_message_stream(session_id, content, message_type="USER"):
-    """
-    Send a message in a chat session and receive a streaming response.
-    """
-    url = f"{base_url}/session/{session_id}/message/stream"
-    data = {
-        "message": {
-            "content": content,
-            "type": message_type
-        }
-    }
-    response = requests.post(url, headers=headers, json=data, stream=True)
-    return response.json()
 
 # Function to get chat session information
 def get_chat_session_info(session_id):
@@ -105,11 +91,6 @@ if __name__ == "__main__":
         print("Sending message...")
         message_response = send_message(session_id, "Hello!")
         print(message_response)
-
-        # Send a streaming message in the chat session
-        # print("Sending streaming message...")
-        # stream_response = send_message_stream(session_id, "How are you?")
-        # print(stream_response)
 
         # Get chat session information
         print("Getting chat session information...")
